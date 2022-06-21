@@ -17,7 +17,7 @@ export default function Document() {
         />
         {/* <link rel="preconnect" href="https://kit.fontawesome.com" crossOrigin="anonymous" /> */}
       </Head>
-      <body className="">
+      <body className="bg-gray-darkest text-white overscroll-none">
         <Main />
         <NextScript />
       </body>
