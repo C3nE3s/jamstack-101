@@ -1,16 +1,17 @@
+import { readFileSync } from "fs";
 import type { InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import path from "path";
 import Block from "../components/Block";
+import BrandGrid from "../components/BrandGrid";
 import MouseArrowDown from "../components/MouseArrowDown";
-import Title from "../components/Title";
-import Text from "../components/Text";
 import RectangleGraphic, {
   RECTANGLE_BG_IMAGE,
 } from "../components/RectangleGraphic";
 import RetroComputer from "../components/RetroComputer/RetroComputer";
-import { readFileSync } from "fs";
-import path from "path";
+import Text from "../components/Text";
+import Title from "../components/Title";
 
 export async function getStaticProps() {
   const buffer = readFileSync(
@@ -92,7 +93,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               role="presentation"
             />
           </span>
-          <div className="relative z-10 pt-[93px] pb-16 flex flex-col items-center text-center ">
+          <div className="relative z-10 pt-[93px] flex flex-col items-center text-center -mb-72">
             <Title as="h2" className="pb-[44px]">
               javascript
             </Title>
@@ -100,17 +101,17 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               Statically generated pages are brought to life with client-side
               JavaScript libraries and frameworks, such as Algolia and Next.js.
             </Text>
-            <RetroComputer>
+            <RetroComputer className="">
               <code className="text-[#44DBFF] font-mono text-xs lg:text-sm">
-                {code}
-                {code}
                 {code}
               </code>
             </RetroComputer>
           </div>
         </Block>
         {/* Falling Logos */}
-        <Block bg="dark">Some text here</Block>
+        <Block bg="dark">
+          <BrandGrid />
+        </Block>
       </main>
 
       <footer>
