@@ -13,7 +13,7 @@ const RetroComputer: React.FC<PropsWithChildren<RetroComputerProps>> = ({
   children,
 }) => {
   return (
-    <div className="z-20 isolate">
+    <figure className={"z-20 isolate " + className}>
       <div className={styles["body-container"]}>
         <div className={styles["body"]}></div>
         <div className={styles["faceplate"]}>
@@ -41,7 +41,7 @@ const RetroComputer: React.FC<PropsWithChildren<RetroComputerProps>> = ({
           role="presentation"
         />
       </div>
-    </div>
+    </figure>
   );
 };
 

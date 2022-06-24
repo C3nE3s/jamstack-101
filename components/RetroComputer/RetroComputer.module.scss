@@ -59,22 +59,24 @@ $computerLean: rotateX(22deg);
 
   @keyframes scroll {
     0% {
-      top: 0;
+      top: 20;
     }
     100% {
-      top: -400px;
+      top: -800px;
     }
   }
   & > * {
     position: absolute;
-    padding: 2rem;
+    top: 0;
+    left: 0;
+    padding: 0 6rem;
     display: flex;
     max-height: 100%;
     transform: $computerLean;
     animation-name: scroll;
-    animation-duration: 8s;
+    animation-duration: 20s;
     animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
+    animation-direction: normal;
     animation-timing-function: linear;
     animation-play-state: paused;
 
