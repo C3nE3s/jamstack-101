@@ -101,7 +101,11 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               JavaScript libraries and frameworks, such as Algolia and Next.js.
             </Text>
             <RetroComputer>
-              <code className="text-[#44DBFF] font-mono">{code}</code>
+              <code className="text-[#44DBFF] font-mono text-xs lg:text-sm">
+                {code}
+                {code}
+                {code}
+              </code>
             </RetroComputer>
           </div>
         </Block>
