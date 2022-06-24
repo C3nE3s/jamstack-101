@@ -35,10 +35,11 @@ module.exports = {
         'gray-light': '#414141',
         'gray-dark': '#1A1A1A',
         'gray-darkest': '#151515',
+        'ooze': '#EFFFE2'
       },
       gridTemplateRows: {
         '9': 'repeat(9, minmax(1rem, 12vh))'
-      }
+      },
     },
   },
   plugins: [],
