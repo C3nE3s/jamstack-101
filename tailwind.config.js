@@ -36,6 +36,9 @@ module.exports = {
         'gray-dark': '#1A1A1A',
         'gray-darkest': '#151515',
       },
+      gridTemplateRows: {
+        '9': 'repeat(9, minmax(1rem, 12vh))'
+      }
     },
   },
   plugins: [],
