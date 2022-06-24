@@ -1,3 +1,5 @@
+import { useId } from "react";
+
 export enum RECTANGLE_BG_IMAGE {
   PEACH_GRADIENT = "peach_gradient",
   LEGO = "lego",
@@ -9,6 +11,7 @@ interface RectangleGraphic {
 }
 
 interface bgImageConfiguration {
+  id: string;
   imagePath: string;
   transform?: { left: string; right: string };
 }
@@ -19,8 +22,10 @@ const RectangleGraphic: React.FC<RectangleGraphic> = ({
   className,
   bgImage,
 }) => {
+  const id = useId();
   const imageConfig: Record<ImageConfigObjKey, bgImageConfiguration> = {
     [RECTANGLE_BG_IMAGE.PEACH_GRADIENT]: {
+      id: "gradient_pattern",
       imagePath: "/images/peach_gradient.jpeg",
       transform: {
         left: "translate(-1.54656 -0.234297) scale(0.00188512 0.000838114)",
@@ -28,6 +33,7 @@ const RectangleGraphic: React.FC<RectangleGraphic> = ({
       },
     },
     [RECTANGLE_BG_IMAGE.LEGO]: {
+      id: "lego_pattern",
       imagePath: "/images/lego.jpeg",
       transform: {
         left: "translate(-1.54656 -0.234297) scale(0.00368762 0.000921363)",
@@ -35,6 +41,10 @@ const RectangleGraphic: React.FC<RectangleGraphic> = ({
       },
     },
   };
+
+  if (bgImage === RECTANGLE_BG_IMAGE.LEGO) {
+    console.log("WTF MAIN?", imageConfig[bgImage].imagePath);
+  }
 
   return (
     <div className={className + " relative"}>
@@ -52,7 +62,7 @@ const RectangleGraphic: React.FC<RectangleGraphic> = ({
           width="280"
           height="629"
           rx="68"
-          fill="url(#pattern_left)"
+          fill={`url(#${id}_pattern_left)`}
         />
         <rect
           x="326"
@@ -60,33 +70,33 @@ const RectangleGraphic: React.FC<RectangleGraphic> = ({
           width="278"
           height="670"
           rx="68"
-          fill="url(#pattern_right)"
+          fill={`url(#${id}_pattern_right)`}
         />
         <defs>
           <pattern
-            id="pattern_left"
+            id={`${id}_pattern_left`}
             patternContentUnits="objectBoundingBox"
             width="1"
             height="1"
           >
             <use
-              href="#bg_pattern"
+              href={`#${imageConfig[bgImage].id}`}
               transform={imageConfig[bgImage].transform?.left}
             />
           </pattern>
           <pattern
-            id="pattern_right"
+            id={`${id}_pattern_right`}
             patternContentUnits="objectBoundingBox"
             width="1"
             height="1"
           >
             <use
-              href="#bg_pattern"
+              href={`#${imageConfig[bgImage].id}`}
               transform={imageConfig[bgImage].transform?.right}
             />
           </pattern>
           <image
-            id="bg_pattern"
+            id={imageConfig[bgImage].id}
             role="presentation"
             href={imageConfig[bgImage].imagePath}
           />
