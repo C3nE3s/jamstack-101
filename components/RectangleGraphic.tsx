@@ -43,7 +43,7 @@ const RectangleGraphic: React.FC<RectangleGraphic> = ({
   };
 
   return (
-    <div className={className + " relative"}>
+    <div className={className + " relative max-h-[629px]"}>
       <svg
         width="736"
         height="964"
@@ -100,8 +100,8 @@ const RectangleGraphic: React.FC<RectangleGraphic> = ({
       </svg>
       {/* Frosted Rectangles */}
       <div className="relative h-full w-full">
-        <div className="w-[280px] h-[479px] rounded-[68px] backdrop-blur-[120px] mix-blend-normal absolute bottom-0 left-[165px] bg-white/50"></div>
-        <div className="w-[280px] h-[662px] rounded-[68px] backdrop-blur-[120px] mix-blend-normal absolute bottom-0 left-[485px] bg-white/50"></div>
+        <div className="w-[280px] h-[479px] rounded-[68px] backdrop-blur-[120px] mix-blend-normal absolute -bottom-[50%] left-[165px] bg-white/50"></div>
+        <div className="w-[280px] h-[662px] rounded-[68px] backdrop-blur-[120px] mix-blend-normal absolute -bottom-[50%] left-[485px] bg-white/50"></div>
       </div>
     </div>
   );
