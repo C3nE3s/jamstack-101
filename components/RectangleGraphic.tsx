@@ -42,10 +42,6 @@ const RectangleGraphic: React.FC<RectangleGraphic> = ({
     },
   };
 
-  if (bgImage === RECTANGLE_BG_IMAGE.LEGO) {
-    console.log("WTF MAIN?", imageConfig[bgImage].imagePath);
-  }
-
   return (
     <div className={className + " relative"}>
       <svg
