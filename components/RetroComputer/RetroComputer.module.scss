@@ -1,0 +1,181 @@
+.body-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  perspective: 12000px;
+  z-index: 10;
+}
+
+$computerLean: rotateX(22deg);
+
+.body {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    242.27deg,
+    rgba(73, 73, 73, 0.3) 3.3%,
+    rgba(255, 255, 255, 0.3) 81.99%
+  );
+  mix-blend-mode: normal;
+  backdrop-filter: blur(120px);
+  border-radius: 57px;
+  transform: $computerLean;
+}
+
+.faceplate {
+  box-sizing: border-box;
+  position: absolute;
+  inset: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  mix-blend-mode: normal;
+  border-radius: 48px;
+  transform: $computerLean;
+  z-index: 0;
+}
+
+.screen_inset {
+  box-sizing: border-box;
+  position: absolute;
+  inset: 18px;
+  height: 66%;
+  background: linear-gradient(
+    242.68deg,
+    rgba(93, 76, 68, 0.3) 17.5%,
+    rgba(38, 33, 30, 0.3) 97.33%
+  );
+  mix-blend-mode: normal;
+  border-radius: 38px;
+  transform: rotateX(6deg);
+}
+
+.screen {
+  background: #1a1a1a;
+  position: absolute;
+  inset: 22px;
+  border-radius: 30px;
+  transform: rotateX(6deg);
+  overflow-y: hidden;
+
+
+  @keyframes scroll {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -400px;
+    }
+  }
+  & > * {
+    position: absolute;
+    padding: 2rem;
+    display: flex;
+    max-height: 100%;
+    transform: $computerLean;
+    animation-name: scroll;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+
+    &:hover {
+      cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🤖</text></svg>")16 0,auto;
+      animation-play-state: running;
+    }
+  }
+}
+
+.floppy-disk {
+  transform: $computerLean;
+  &__container {
+    position: absolute;
+    bottom: 10%;
+    right: -10%;
+    width: 45%;
+    height: 11%;
+    z-index: auto;
+  }
+  &__inset {
+    isolation: isolate;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    &::before {
+      content: '';
+      position: absolute;
+      background: radial-gradient(
+        41.52% 117.44% at 70.05% 62.9%,
+        rgba(93, 76, 68, 0.3) 0%,
+        rgba(38, 33, 30, 0.3) 100%
+      );
+      inset: 0;
+      height: 100%;
+      width: 66%;
+      border-radius: 23px;
+      z-index: 0;
+      backdrop-filter: blur(120px);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      background: radial-gradient(
+        41.52% 117.44% at 70.05% 62.9%,
+        rgba(93, 76, 68, 0.2) 0%,
+        rgba(38, 33, 30, 0.2) 100%
+      );
+      inset: 0;
+      transform: translateX(-36%);
+      height: 100%;
+      width: 105%;
+      border-radius: 23px;
+      z-index: -10;
+      clip-path: inset(28px 15% 28px 10px round 8px);
+      border-bottom-left-radius: 8px;
+      border-top-left-radius: 8px;
+    }
+
+    &--outer {
+      position: absolute;
+      inset: 0;
+      width: 66%;
+      border-radius: 23px;
+      &::before {
+        content: '';
+        position: absolute;
+        background: inherit;
+        inset: 20px;
+        left: -58%;
+        width: 100%;
+        border-radius: 8px;
+      }
+    }
+    &--inner {
+      position: absolute;
+      inset: 21px;
+      border-radius: 8px;
+      background-color: #3e3d3c;
+    }
+  }
+  &__slot {
+    position: absolute;
+    inset: 15px;
+    left: -70%;
+    background-color: #1a1a1a;
+    width: 163%;
+    border-radius: 7px;
+  }
+}
+
+
+.base-container {
+  margin-top: -9rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  & > svg {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+}
+
