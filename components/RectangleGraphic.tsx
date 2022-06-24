@@ -4,7 +4,7 @@ export enum RECTANGLE_BG_IMAGE {
 }
 
 interface RectangleGraphic {
-  className: string;
+  className?: string;
   bgImage: RECTANGLE_BG_IMAGE;
 }
 
@@ -37,7 +37,7 @@ const RectangleGraphic: React.FC<RectangleGraphic> = ({
   };
 
   return (
-    <>
+    <div className={className + " relative"}>
       <svg
         width="736"
         height="964"
@@ -45,7 +45,7 @@ const RectangleGraphic: React.FC<RectangleGraphic> = ({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        className={className}
+        className="absolute"
       >
         <rect
           y="171"
@@ -56,6 +56,7 @@ const RectangleGraphic: React.FC<RectangleGraphic> = ({
         />
         <rect
           x="326"
+          y="0"
           width="278"
           height="670"
           rx="68"
@@ -93,10 +94,10 @@ const RectangleGraphic: React.FC<RectangleGraphic> = ({
       </svg>
       {/* Frosted Rectangles */}
       <div className="relative h-full w-full">
-        <div className="w-[280px] h-[479px] rounded-[68px] backdrop-blur-[120px] mix-blend-normal absolute top-[350px] left-[165px] bg-white/50"></div>
-        <div className="w-[280px] h-[662px] rounded-[68px] backdrop-blur-[120px] mix-blend-normal absolute top-[143px] left-[485px] bg-white/50"></div>
+        <div className="w-[280px] h-[479px] rounded-[68px] backdrop-blur-[120px] mix-blend-normal absolute bottom-0 left-[165px] bg-white/50"></div>
+        <div className="w-[280px] h-[662px] rounded-[68px] backdrop-blur-[120px] mix-blend-normal absolute bottom-0 left-[485px] bg-white/50"></div>
       </div>
-    </>
+    </div>
   );
 };
 
