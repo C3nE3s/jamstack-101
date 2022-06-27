@@ -25,7 +25,13 @@ const Block: React.FC<PropsWithChildren<BlockProps>> = ({
     userDefinedStyles,
   ]);
 
-  return <section className={dedupedStyles}>{children}</section>;
+  return (
+    <section className={dedupedStyles}>
+      <div className="flex flex-col max-w-7xl items-center mx-auto">
+        {children}
+      </div>
+    </section>
+  );
 };
 
 export default Block;
