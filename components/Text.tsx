@@ -11,8 +11,8 @@ interface TextProps {
 const Text: React.FC<PropsWithChildren<TextProps>> = (props) => {
   const { as: Component, children, className, color, emphasized } = props;
 
-  const baseTextStyle = "lg:text-lg font-light";
-  const emphasizedStyle = "font-normal lg:text-2xl";
+  const baseTextStyle = "lg:text-lg sm:text-md font-light";
+  const emphasizedStyle = "font-normal lg:text-2xl sm:text-lg";
   const textColor = color === "gray" ? "text-gray-lightest" : "text-white";
 
   // Allow for classes to be passed down, but remove dupes and preserve order

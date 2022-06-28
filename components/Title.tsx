@@ -7,8 +7,8 @@ interface TitleProps {
 }
 
 const HeadingStyles: Record<TitleProps["as"], string> = {
-  h1: "font-extrabold lg:text-9xl whitespace-nowrap",
-  h2: "font-extrabold lg:text-9xl whitespace-nowrap",
+  h1: "font-extrabold lg:text-9xl md:text-8xl sm:text-7xl text-6xl text-center md:text-left whitespace-nowrap",
+  h2: "font-extrabold lg:text-9xl md:text-8xl whitespace-nowrap",
   h3: "",
 };
 

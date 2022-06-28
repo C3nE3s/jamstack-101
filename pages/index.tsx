@@ -35,31 +35,54 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <Layout>
       {/* HERO BLOCK */}
-      <Block bg="light" className="pb-[42px]">
-        <Title
-          as="h1"
-          className="text-gray-darkest lg:pt-[153px] lg:pl-[10px] w-full"
-        >
-          jamstack&nbsp;
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 via-[#F58E7D] to-[#CD789F]">
-            101
-          </span>
-        </Title>
-
-        <div className="flex flex-row w-full lg:pt-[18px] gap-12">
-          <div className="basis-1/2 flex flex-col lg:pl-[62px] lg:max-w-[550px] relative">
-            <Text as="p" color="gray" className="lg:pt-[26px] pb-[88px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu
-              augue massa, tincidunt proin nunc viverra tristique tempor, ipsum.
-              At lectus vel pretium tempor ut dui vivamus sit.
-            </Text>
-            <MouseArrowDown />
+      <Block bg="light" className="py-16 md:py-28 lg:py-36">
+        <div className="max-w-7xl mx-auto">
+          <Title as="h1" className="text-gray-darkest lg:pb-5 pb-8">
+            jamstack&nbsp;
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 via-[#F58E7D] to-[#CD789F]">
+              101
+            </span>
+          </Title>
+          <div className="flex flex-col items-center md:items-stretch md:flex-row h-fit lg:gap-12 gap-6 sm:gap-3">
+            <div className="basis-1/2 flex-shrink-0 flex flex-col justify-between lg:pt-4">
+              <Text
+                as="p"
+                color="gray"
+                className="lg:pl-16 md:pl-8 lg:max-w-xl max-w-sm"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu
+                augue massa, tincidunt proin nunc viverra tristique tempor,
+                ipsum. At lectus vel pretium tempor ut dui vivamus sit.
+              </Text>
+              <MouseArrowDown />
+            </div>
+            <div className="hidden md:block basis-1/2">
+              <RectangleGraphic bgImage={RECTANGLE_BG_IMAGE.PEACH_GRADIENT} />
+            </div>
           </div>
-          <RectangleGraphic
-            bgImage={RECTANGLE_BG_IMAGE.PEACH_GRADIENT}
-            className="relative -mt-40"
-          />
         </div>
+
+        {/* <div className="flex flex-col max-w-7xl justify-center items-center mx-auto h-fit">
+          <Title as="h1" className="text-gray-darkest w-full flex-1 flex-wrap">
+            jamstack&nbsp;
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 via-[#F58E7D] to-[#CD789F]">
+              101
+            </span>
+          </Title>
+          <div className="w-full h-full flex flex-row gap-12 pb-9">
+            <div className="flex flex-row w-full lg:pt-[18px] gap-12">
+              <div className="basis-1/2 flex flex-col items-end justify-end lg:pl-[62px] lg:max-w-[550px] relative">
+                <Text as="p" color="gray" className="lg:pt-[26px] pb-[88px]">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu
+                  augue massa, tincidunt proin nunc viverra tristique tempor,
+                  ipsum. At lectus vel pretium tempor ut dui vivamus sit.
+                </Text>
+                <MouseArrowDown />
+              </div>
+              <RectangleGraphic bgImage={RECTANGLE_BG_IMAGE.PEACH_GRADIENT} />
+            </div>
+          </div>
+        </div> */}
       </Block>
       {/* Javascript Block */}
       <Block
@@ -120,7 +143,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       {/* markdown block */}
       <Block bg="light" className="relative flex flex-col">
         <Title as="h2" className="pb-11 text-gray-darkest">
-          markdown
+          markup
         </Title>
         <div className="w-full h-full flex flex-row gap-12 pb-9">
           <div className="flex flex-col pt-6 pb-64">
