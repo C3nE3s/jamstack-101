@@ -66,6 +66,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         bg="dark"
         className="relative flex flex-col overflow-y-visible py-4 sm:py-8 md:py-16 lg:pb-24 -mb-[15%] before:content-[' '] before:absolute before:top-0 before:left-0 before:w-full before:h-1/2 before:bg-white"
       >
+        {/* Peach Gradient Rounded Trapizoid */}
         <span className="absolute inset-0 lg:px-[7.25rem] md:px-16 w-full min-h-[893px]">
           <Image
             src="/images/peach_gradient_block.svg"
@@ -75,6 +76,17 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             alt=""
             role="presentation"
           />
+          {/* Arrow */}
+          <span className="hidden xl:block absolute z-20 w-[15%] top-[20%] right-[15%]">
+            <Image
+              src="/images/js_arrow.svg"
+              layout="responsive"
+              width={248}
+              height={467}
+              alt=""
+              role="presentation"
+            />
+          </span>
         </span>
         <div className="relative flex flex-col items-center text-center lg:max-w-4xl md:max-w-2xl sm:max-w-md mx-auto pb-4 md:pb-8 lg:pb-16">
           <Title as="h2" className="pb-6 lg:pb-11">
@@ -85,7 +97,8 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             JavaScript libraries and frameworks, such as Algolia and Next.js.
           </Text>
         </div>
-        <div className="w-[60%] mx-auto z-10">
+        {/* Retro Computer */}
+        <div className="w-1/2 mx-auto z-10">
           <Image
             src="/images/retro_comp.png"
             width={810}
