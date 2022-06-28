@@ -1,15 +1,14 @@
 import { readFileSync } from "fs";
 import type { InferGetStaticPropsType, NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import path from "path";
 import Block from "../components/Block";
 import BrandGrid from "../components/BrandGrid";
+import Layout from "../components/Layout";
 import MouseArrowDown from "../components/MouseArrowDown";
 import RectangleGraphic, {
   RECTANGLE_BG_IMAGE,
 } from "../components/RectangleGraphic";
-import RetroComputer from "../components/RetroComputer/RetroComputer";
 import ScoreCircle from "../components/ScoreCircle/ScoreCircle";
 import ScoreContainer from "../components/ScoreContainer/ScoreContainer";
 import Text from "../components/Text";
@@ -32,122 +31,132 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   code,
 }) => {
   return (
-    <div className="relative lg:w-screen-xl h-fit overflow-clip">
-      <Head>
-        <title>jamstack 101</title>
-        <meta name="description" content="Marketing site for the jamstack" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      {/* Background Vertical Stripe */}
-      <span className="absolute inset-0 lg:px-[7.25rem] h-fit w-full bg-transparent">
-        <Image
-          src="/images/vertical_dashed_grid.svg"
-          layout="responsive"
-          height={8057}
-          width={1282}
-          alt=""
-          role="presentation"
-          priority={true}
-        />
-      </span>
-
-      <main>
-        {/* HERO BLOCK */}
-        <Block bg="light" className="pb-[42px]">
-          <Title
-            as="h1"
-            className="text-gray-darkest lg:pt-[153px] lg:pl-[10px] w-full"
-          >
+    <Layout>
+      {/* HERO BLOCK */}
+      <Block bg="light" className="py-16 md:py-28 lg:py-36">
+        <div className="max-w-7xl mx-auto">
+          <Title as="h1" className="text-gray-darkest lg:pb-5 pb-8">
             jamstack&nbsp;
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 via-[#F58E7D] to-[#CD789F]">
               101
             </span>
           </Title>
-
-          <div className="flex flex-row lg:pt-[18px] gap-12">
-            <div className="basis-1/2 flex flex-col lg:pl-[62px] lg:max-w-[550px] relative">
-              <Text as="p" color="gray" className="lg:pt-[26px] pb-[88px]">
+          <div className="flex flex-col items-center md:items-stretch md:flex-row h-fit lg:gap-12 gap-6 sm:gap-3">
+            <div className="basis-1/2 flex-shrink-0 flex flex-col justify-between lg:pt-4">
+              <Text
+                as="p"
+                color="gray"
+                className="lg:pl-16 md:pl-8 lg:max-w-xl max-w-sm"
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu
                 augue massa, tincidunt proin nunc viverra tristique tempor,
                 ipsum. At lectus vel pretium tempor ut dui vivamus sit.
               </Text>
               <MouseArrowDown />
             </div>
-            <RectangleGraphic
-              bgImage={RECTANGLE_BG_IMAGE.PEACH_GRADIENT}
-              className="relative -mt-40"
-            />
+            <div className="hidden md:block basis-1/2">
+              <RectangleGraphic bgImage={RECTANGLE_BG_IMAGE.PEACH_GRADIENT} />
+            </div>
           </div>
-        </Block>
-        {/* Javascript Block */}
-        <Block
-          bg="dark"
-          className="relative lg:px-[305px] flex flex-col overflow-y-visible"
-        >
-          <span className="absolute inset-0 lg:px-[7.25rem] h-fit w-full before:content-[' '] before:absolute before:top-0 before:left-0 before:w-full before:h-2/3 before:bg-white">
+        </div>
+      </Block>
+      {/* Javascript Block */}
+      <Block
+        bg="dark"
+        className="relative flex flex-col overflow-y-visible py-4 sm:py-8 md:py-16 lg:pb-24 -mb-[15%] before:content-[' '] before:absolute before:top-0 before:left-0 before:w-full before:h-1/2 before:bg-white"
+      >
+        {/* Peach Gradient Rounded Trapizoid */}
+        <span className="absolute inset-0 lg:px-[7.25rem] md:px-16 w-full min-h-[893px]">
+          <Image
+            src="/images/peach_gradient_block.svg"
+            layout="responsive"
+            height={893}
+            width={1393}
+            alt=""
+            role="presentation"
+          />
+          {/* Arrow */}
+          <span className="hidden xl:block absolute z-20 w-[15%] top-[20%] right-[15%]">
             <Image
-              src="/images/peach_gradient_block.svg"
+              src="/images/js_arrow.svg"
               layout="responsive"
-              height={893}
-              width={1393}
+              width={248}
+              height={467}
               alt=""
               role="presentation"
             />
           </span>
-          <div className="relative z-10 pt-[93px] flex flex-col items-center text-center -mb-72">
-            <Title as="h2" className="pb-[44px]">
-              javascript
-            </Title>
-            <Text as="p" color="white" className="max-lg:w-[575px]">
-              Statically generated pages are brought to life with client-side
-              JavaScript libraries and frameworks, such as Algolia and Next.js.
-            </Text>
-            <RetroComputer className="">
-              <code className="text-[#44DBFF] font-mono text-xs lg:text-sm">
-                {code}
-              </code>
-            </RetroComputer>
-          </div>
-        </Block>
-        {/* Falling Logos */}
-        <Block bg="dark">
-          <BrandGrid />
-        </Block>
-        {/* API Block*/}
-        <Block
-          bg="dark"
-          className="relative text-center flex flex-col items-center"
-        >
-          <Title as="h2" className="pb-16">
-            api
+        </span>
+        <div className="relative flex flex-col items-center text-center lg:max-w-4xl md:max-w-2xl sm:max-w-md mx-auto pb-4 md:pb-8 lg:pb-16">
+          <Title as="h2" className="pb-6 lg:pb-11">
+            javascript
           </Title>
-          <Text
-            as="p"
-            color="white"
-            emphasized={true}
-            className="lg:max-w-[575px] pb-10"
-          >
-            At build time, a Jamstack website uses data from one or more APIs to
-            generate markup. These APIs can be a headless CMS like Prismic, a
-            database like Supabase, or even a local JSON file!
+          <Text as="p" color="white" className="lg:max-w-[575px] max-w-sm">
+            Statically generated pages are brought to life with client-side
+            JavaScript libraries and frameworks, such as Algolia and Next.js.
           </Text>
+        </div>
+        {/* Retro Computer */}
+        <div className="w-1/2 mx-auto z-10">
+          <Image
+            src="/images/retro_comp.png"
+            width={810}
+            height={808}
+            layout="responsive"
+            alt=""
+            role="presentation"
+            className="-mb-[20%]"
+          />
+        </div>
+      </Block>
+      {/* Falling Logos */}
+      <div className="max-w-5xl mx-auto p-0 m-0">
+        <BrandGrid />
+      </div>
+      {/* API Block*/}
+      <Block
+        bg="dark"
+        className="relative text-center flex flex-col items-center"
+      >
+        <Title as="h2" className="pb-16">
+          api
+        </Title>
+        <Text
+          as="p"
+          color="white"
+          emphasized={true}
+          className="lg:max-w-[575px] pb-10"
+        >
+          At build time, a Jamstack website uses data from one or more APIs to
+          generate markup. These APIs can be a headless CMS like Prismic, a
+          database like Supabase, or even a local JSON file!
+        </Text>
 
-          {/* SLOT FOR THREEJS GLOBE HERE! */}
-        </Block>
+        {/* SLOT FOR THREEJS GLOBE HERE! */}
+      </Block>
 
-        {/* markdown block */}
-        <Block bg="light" className="relative flex flex-col">
-          <Title as="h2" className="pb-11 text-gray-darkest">
-            markdown
+      {/* markdown block */}
+      <Block
+        bg="light"
+        className="-z-10 relative py-16 md:py-28 lg:py-36 -mb-[5%]"
+      >
+        <div className="flex flex-col items-center md:items-stretch max-w-7xl mx-auto lg:pb-64 md:pb-32 sm:pb-36 pb-24">
+          <Title
+            as="h2"
+            className="hidden md:block pb-6 lg:pb-11 text-gray-darkest"
+          >
+            markup
           </Title>
-          <div className="w-full h-full flex flex-row gap-12 pb-9">
-            <div className="flex flex-col pt-6 pb-64">
+          <div className="flex flex-col items-center md:items-stretch md:flex-row h-fit lg:gap-12 gap-6 sm:gap-3">
+            <Title as="h2" className="md:hidden w-full pb-4 text-gray-darkest">
+              markup
+            </Title>
+            <div className="basis-1/2 flex-shrink-0 flex flex-col justify-between lg:pt-4">
               <Text
                 as="p"
-                color="gray"
+                color="dark"
                 emphasized={true}
-                className="lg:max-w-[575px] pb-32"
+                className="lg:max-w-xl max-w-sm pb-16 md:pb-0"
               >
                 {`When ready for deployment, a static-site generator such as Astro or
                   Next.js is used to compile the website. The end result is a
@@ -163,55 +172,46 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 role="presentation"
               />
             </div>
-            <RectangleGraphic
-              bgImage={RECTANGLE_BG_IMAGE.LEGO}
-              className="relative -mt-40"
-            />
+            <div className="hidden md:block basis-1/2">
+              <RectangleGraphic bgImage={RECTANGLE_BG_IMAGE.LEGO} />
+            </div>
           </div>
-          <div className="w-screen absolute bottom-0 left-0">
-            <Image
-              src="/images/wall_blocks.svg"
-              layout="responsive"
-              width={1512}
-              height={228}
-              alt=""
-              role="presentation"
-            />
-          </div>
-        </Block>
+        </div>
+        <div className="w-[133vw] sm:w-screen absolute bottom-0 left-0">
+          <Image
+            src="/images/wall_blocks.svg"
+            layout="responsive"
+            width={1512}
+            height={228}
+            alt=""
+            role="presentation"
+          />
+        </div>
+      </Block>
 
-        {/* Scores Block */}
-        <Block bg="dark" className="relative h-screen">
-          <div className="w-4/5 absolute -top-[86px] left-1/2 transform -translate-x-1/2">
-            <ScoreContainer>
-              <h2 className="text-ooze text-7xl font-black tracking-[-0.039em] leading-[92px] text-center pb-24">
-                top audit scores
-              </h2>
-              <div className="w-full flex flex-row justify-center items-center pb-32">
-                <ScoreCircle dim={false} />
-                <ScoreCircle dim={false} />
-                <ScoreCircle dim={true} />
-                <ScoreCircle dim={false} />
-              </div>
-              <div className="lg:max-w-[756px] mx-auto font-sans font-normal text-3xl leading-[42px] text-[#C7C7C7] pb-48 [&>*]:pb-6 mix-blend-color-dodge">
-                <p>{`Search engines, business stakeholders, and end-users gauge a website’s value using metric tools like Google Lighthouse, which measures site performance, SEO, and accessibility.`}</p>
-                <br />
-                <p>{`Performance is one of the most difficult scores to get to 100. This is especially true in a time when users demand JavaScript-heavy, highly-interactive web experiences.`}</p>
-                <br />
-                <p>{`A Jamstack website, delivering SEO-friendly, lean & clean HTML in milliseconds, promises higher search-engine ranking and a more positive, responsive end-user experience.`}</p>
-              </div>
-            </ScoreContainer>
+      {/* Scores Block */}
+      <Block bg="dark" className="relative h-fit py-16 md:py-28 lg:py-36">
+        <div className="z-10">
+          <h2 className="text-ooze text-5xl sm:text-6xl md:text-7xl font-black leading-none text-center">
+            top audit scores
+          </h2>
+          <div className="w-full flex flex-row flex-grow-0 justify-between items-center lg:py-20 lg:px-8 xl:px-16">
+            <ScoreCircle dim={false} />
+            <ScoreCircle dim={false} className="hidden lg:block" />
+            <ScoreCircle dim={true} className="hidden lg:block" />
+            <ScoreCircle dim={false} className="hidden lg:block" />
           </div>
-        </Block>
-      </main>
-
-      <footer className="py-96 grid place-content-center">
-        <p className="font-sans text-2xl text-center pb-16">
-          This is a design test by Calin Ennis for Monogram
-        </p>
-        <span className="text-center text-5xl">💜</span>
-      </footer>
-    </div>
+          <div className="max-w-xs sm:max-w-md lg:max-w-xl xl:max-w-2xl mx-auto font-sans font-normal text-2xl sm:text-3xl leading-[42px] text-[#C7C7C7] [&>*]:pb-6 [&>*]:mix-blend-color-dodge">
+            <p>{`Search engines, business stakeholders, and end-users gauge a website’s value using metric tools like Google Lighthouse, which measures site performance, SEO, and accessibility.`}</p>
+            <br />
+            <p>{`Performance is one of the most difficult scores to get to 100. This is especially true in a time when users demand JavaScript-heavy, highly-interactive web experiences.`}</p>
+            <br />
+            <p>{`A Jamstack website, delivering SEO-friendly, lean & clean HTML in milliseconds, promises higher search-engine ranking and a more positive, responsive end-user experience.`}</p>
+          </div>
+          <ScoreContainer />
+        </div>
+      </Block>
+    </Layout>
   );
 };
 

@@ -11,7 +11,8 @@ const Block: React.FC<PropsWithChildren<BlockProps>> = ({
   className,
   children,
 }) => {
-  const baseStyle = "h-fit w-screen relative overflow-x-clip lg:px-[7.25rem]";
+  const baseStyle =
+    "h-fit w-screen relative overflow-x-clip lg:px-[7.25rem] md:px-24";
   const lightStyle = "bg-white text-gray-light";
   const darkStyle = "bg-transparent";
 

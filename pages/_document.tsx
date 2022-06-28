@@ -1,7 +1,7 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
-// TODO:
-// Look into fontawesome kit
+// TODO: FAVICON
+// <link rel="icon" href="/favicon.ico" />
 
 export default function Document() {
   return (
@@ -15,7 +15,6 @@ export default function Document() {
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        {/* <link rel="preconnect" href="https://kit.fontawesome.com" crossOrigin="anonymous" /> */}
       </Head>
       <body className="bg-gray-darkest text-white overscroll-none">
         <Main />
