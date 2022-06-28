@@ -12,8 +12,10 @@ const RetroComputer: React.FC<PropsWithChildren<RetroComputerProps>> = ({
   className,
   children,
 }) => {
+  const computedStyles = `${className ?? ""} z-20 isolate`;
+
   return (
-    <figure className={"z-20 isolate " + className}>
+    <figure className={computedStyles}>
       <div className={styles["body-container"]}>
         <div className={styles["body"]}></div>
         <div className={styles["faceplate"]}>

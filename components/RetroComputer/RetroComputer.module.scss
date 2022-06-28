@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1/1;
-  perspective: 12000px;
+  perspective: 3000px;
   z-index: 10;
 }
 
@@ -130,8 +130,8 @@ $computerLean: rotateX(22deg);
         rgba(38, 33, 30, 0.2) 100%
       );
       inset: 0;
-      transform: translateX(-36%);
-      height: 100%;
+      transform: translateX(-36%) translateY(-2%);
+      height: 105%;
       width: 105%;
       border-radius: 23px;
       z-index: -10;
@@ -157,7 +157,7 @@ $computerLean: rotateX(22deg);
     }
     &--inner {
       position: absolute;
-      inset: 21px;
+      inset: 18px;
       border-radius: 8px;
       background-color: #3e3d3c;
     }
