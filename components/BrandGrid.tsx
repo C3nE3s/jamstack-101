@@ -26,7 +26,7 @@ interface BrandGridProps {}
 
 const BrandGrid: React.FC = () => {
   return (
-    <div className="w-full pb-16 grid grid-rows-9 lg:grid-cols-4 gap-0 place-items-center z-30">
+    <div className="w-full grid grid-rows-9 lg:grid-cols-4 gap-0 place-items-center">
       <BrandIcon
         brand="NEXTJS"
         brightness="light"

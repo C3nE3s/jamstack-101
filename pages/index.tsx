@@ -60,35 +60,13 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </div>
           </div>
         </div>
-
-        {/* <div className="flex flex-col max-w-7xl justify-center items-center mx-auto h-fit">
-          <Title as="h1" className="text-gray-darkest w-full flex-1 flex-wrap">
-            jamstack&nbsp;
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 via-[#F58E7D] to-[#CD789F]">
-              101
-            </span>
-          </Title>
-          <div className="w-full h-full flex flex-row gap-12 pb-9">
-            <div className="flex flex-row w-full lg:pt-[18px] gap-12">
-              <div className="basis-1/2 flex flex-col items-end justify-end lg:pl-[62px] lg:max-w-[550px] relative">
-                <Text as="p" color="gray" className="lg:pt-[26px] pb-[88px]">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu
-                  augue massa, tincidunt proin nunc viverra tristique tempor,
-                  ipsum. At lectus vel pretium tempor ut dui vivamus sit.
-                </Text>
-                <MouseArrowDown />
-              </div>
-              <RectangleGraphic bgImage={RECTANGLE_BG_IMAGE.PEACH_GRADIENT} />
-            </div>
-          </div>
-        </div> */}
       </Block>
       {/* Javascript Block */}
       <Block
         bg="dark"
-        className="relative lg:px-[305px] flex flex-col overflow-y-visible"
+        className="relative flex flex-col overflow-y-visible py-4 sm:py-8 md:py-16 lg:pb-24 -mb-[15%] before:content-[' '] before:absolute before:top-0 before:left-0 before:w-full before:h-1/2 before:bg-white"
       >
-        <span className="absolute inset-0 lg:px-[7.25rem] h-fit w-full before:content-[' '] before:absolute before:top-0 before:left-0 before:w-full before:h-2/3 before:bg-white">
+        <span className="absolute inset-0 lg:px-[7.25rem] md:px-16 w-full min-h-[893px]">
           <Image
             src="/images/peach_gradient_block.svg"
             layout="responsive"
@@ -98,25 +76,31 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             role="presentation"
           />
         </span>
-        <div className="relative z-10 pt-[93px] flex flex-col items-center text-center -mb-72">
-          <Title as="h2" className="pb-[44px]">
+        <div className="relative flex flex-col items-center text-center lg:max-w-4xl md:max-w-2xl sm:max-w-md mx-auto pb-4 md:pb-8 lg:pb-16">
+          <Title as="h2" className="pb-6 lg:pb-11">
             javascript
           </Title>
-          <Text as="p" color="white" className="max-lg:w-[575px]">
+          <Text as="p" color="white" className="lg:max-w-[575px] max-w-sm">
             Statically generated pages are brought to life with client-side
             JavaScript libraries and frameworks, such as Algolia and Next.js.
           </Text>
-          <RetroComputer className="">
-            <code className="text-[#44DBFF] font-mono text-xs lg:text-sm">
-              {code}
-            </code>
-          </RetroComputer>
+        </div>
+        <div className="w-[60%] mx-auto z-10">
+          <Image
+            src="/images/retro_comp.png"
+            width={810}
+            height={808}
+            layout="responsive"
+            alt=""
+            role="presentation"
+            className="-mb-[20%]"
+          />
         </div>
       </Block>
       {/* Falling Logos */}
-      <Block bg="dark">
+      <div className="max-w-5xl mx-auto p-0 m-0">
         <BrandGrid />
-      </Block>
+      </div>
       {/* API Block*/}
       <Block
         bg="dark"
@@ -178,49 +162,6 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </div>
           </div>
         </div>
-        {/* <div className="max-w-7xl mx-auto">
-          <Title as="h2" className="pb-11 text-gray-darkest">
-            markup
-          </Title>
-          <div className="flex flex-col items-center md:items-stretch md:flex-row h-fit lg:gap-12 gap-6 sm:gap-3"> 
-            <div className="flex flex-col pt-6 pb-64">
-              <Text
-                as="p"
-                color="gray"
-                emphasized={true}
-                className="lg:max-w-[575px] pb-32"
-              >
-                {`When ready for deployment, a static-site generator such as Astro or
-                  Next.js is used to compile the website. The end result is a
-                  collection of pre-rendered HTML pages that can be delivered
-                  lightning-fast over a CDN like Vercel’s Edge Network.`}
-              </Text>
-              <Image
-                src="/images/toppled_blocks.svg"
-                layout="responsive"
-                width={621}
-                height={456}
-                alt=""
-                role="presentation"
-              />
-            </div>
-            <RectangleGraphic
-              bgImage={RECTANGLE_BG_IMAGE.LEGO}
-              className="relative -mt-40"
-            />
-          </div>
-          <div className="w-screen absolute bottom-0 left-0">
-            <Image
-              src="/images/wall_blocks.svg"
-              layout="responsive"
-              width={1512}
-              height={228}
-              alt=""
-              role="presentation"
-            />
-          </div>
-        </div> */}
-
         <div className="w-[133vw] sm:w-screen absolute bottom-0 left-0">
           <Image
             src="/images/wall_blocks.svg"

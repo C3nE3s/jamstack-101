@@ -14,9 +14,9 @@ const Text: React.FC<PropsWithChildren<TextProps>> = (props) => {
   const { as: Component, children, className, color, emphasized } = props;
 
   const baseTextStyle =
-    "lg:text-lg sm:text-md font-light leading-7 md:leading-[1.21]";
+    "lg:text-lg sm:text-md font-light leading-7 md:leading-[1.62]";
   const emphasizedStyle =
-    "font-normal lg:text-2xl sm:text-lg leading-7 md:leading-[1.21]";
+    "font-normal lg:text-2xl sm:text-lg leading-7 md:leading-[1.62]";
 
   const textColor: Record<TextColorPallet, string> = {
     white: "text-white",
