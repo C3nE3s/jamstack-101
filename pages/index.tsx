@@ -1,6 +1,5 @@
 import { readFileSync } from "fs";
 import type { InferGetStaticPropsType, NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import path from "path";
 import Block from "../components/Block";
@@ -141,38 +140,88 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       </Block>
 
       {/* markdown block */}
-      <Block bg="light" className="relative flex flex-col">
-        <Title as="h2" className="pb-11 text-gray-darkest">
-          markup
-        </Title>
-        <div className="w-full h-full flex flex-row gap-12 pb-9">
-          <div className="flex flex-col pt-6 pb-64">
-            <Text
-              as="p"
-              color="gray"
-              emphasized={true}
-              className="lg:max-w-[575px] pb-32"
-            >
-              {`When ready for deployment, a static-site generator such as Astro or
+      <Block bg="light" className="relative py-16 md:py-28 lg:py-36">
+        <div className="flex flex-col items-center md:items-stretch max-w-7xl mx-auto lg:pb-64 md:pb-32 sm:pb-36 pb-24">
+          <Title
+            as="h2"
+            className="hidden md:block pb-6 lg:pb-11 text-gray-darkest"
+          >
+            markup
+          </Title>
+          <div className="flex flex-col items-center md:items-stretch md:flex-row h-fit lg:gap-12 gap-6 sm:gap-3">
+            <Title as="h2" className="md:hidden w-full pb-4 text-gray-darkest">
+              markup
+            </Title>
+            <div className="basis-1/2 flex-shrink-0 flex flex-col justify-between lg:pt-4">
+              <Text
+                as="p"
+                color="dark"
+                emphasized={true}
+                className="lg:max-w-xl max-w-sm pb-16 md:pb-0"
+              >
+                {`When ready for deployment, a static-site generator such as Astro or
                   Next.js is used to compile the website. The end result is a
                   collection of pre-rendered HTML pages that can be delivered
                   lightning-fast over a CDN like Vercel’s Edge Network.`}
-            </Text>
+              </Text>
+              <Image
+                src="/images/toppled_blocks.svg"
+                layout="responsive"
+                width={621}
+                height={456}
+                alt=""
+                role="presentation"
+              />
+            </div>
+            <div className="hidden md:block basis-1/2">
+              <RectangleGraphic bgImage={RECTANGLE_BG_IMAGE.LEGO} />
+            </div>
+          </div>
+        </div>
+        {/* <div className="max-w-7xl mx-auto">
+          <Title as="h2" className="pb-11 text-gray-darkest">
+            markup
+          </Title>
+          <div className="flex flex-col items-center md:items-stretch md:flex-row h-fit lg:gap-12 gap-6 sm:gap-3"> 
+            <div className="flex flex-col pt-6 pb-64">
+              <Text
+                as="p"
+                color="gray"
+                emphasized={true}
+                className="lg:max-w-[575px] pb-32"
+              >
+                {`When ready for deployment, a static-site generator such as Astro or
+                  Next.js is used to compile the website. The end result is a
+                  collection of pre-rendered HTML pages that can be delivered
+                  lightning-fast over a CDN like Vercel’s Edge Network.`}
+              </Text>
+              <Image
+                src="/images/toppled_blocks.svg"
+                layout="responsive"
+                width={621}
+                height={456}
+                alt=""
+                role="presentation"
+              />
+            </div>
+            <RectangleGraphic
+              bgImage={RECTANGLE_BG_IMAGE.LEGO}
+              className="relative -mt-40"
+            />
+          </div>
+          <div className="w-screen absolute bottom-0 left-0">
             <Image
-              src="/images/toppled_blocks.svg"
+              src="/images/wall_blocks.svg"
               layout="responsive"
-              width={621}
-              height={456}
+              width={1512}
+              height={228}
               alt=""
               role="presentation"
             />
           </div>
-          <RectangleGraphic
-            bgImage={RECTANGLE_BG_IMAGE.LEGO}
-            className="relative -mt-40"
-          />
-        </div>
-        <div className="w-screen absolute bottom-0 left-0">
+        </div> */}
+
+        <div className="w-[133vw] sm:w-screen absolute bottom-0 left-0">
           <Image
             src="/images/wall_blocks.svg"
             layout="responsive"
