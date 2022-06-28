@@ -1,10 +1,16 @@
 .container {
+  position: absolute;
+  inset: 0;
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
   background: linear-gradient(25.39deg, rgba(255, 255, 255, 0.024) 18.54%, rgba(123, 245, 93, 0.108) 62.25%);
   mix-blend-mode: normal;
   backdrop-filter: blur(120px);
   border-radius: 68px;
-  // transform: matrix(-1, 0, 0, 1, 0, 0);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
   padding: 7.5rem 0;
+  z-index: -10;
 }

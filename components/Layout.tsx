@@ -31,7 +31,7 @@ const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({
       </Head>
       <main className="relative">
         {/* Background Vertical Stripe */}
-        <span className="absolute inset-0 lg:px-[7.25rem] h-fit w-full max-w-7xl mx-auto bg-transparent">
+        <span className="absolute inset-0 lg:px-[7.25rem] h-fit w-full max-w-7xl mx-auto bg-transparent -z-10">
           <Image
             src="/images/vertical_dashed_grid.svg"
             layout="responsive"

@@ -8,7 +8,7 @@ interface ScoreCircleProps {
 
 const ScoreCircle: React.FC<ScoreCircleProps> = ({ dim, className }) => {
   const combinedStyles = `${className ?? ""} relative w-full`;
-
+  const dimStyle = dim ? "opacity-30" : "";
   return (
     <div className={combinedStyles}>
       <Image
@@ -18,7 +18,7 @@ const ScoreCircle: React.FC<ScoreCircleProps> = ({ dim, className }) => {
         height={338}
         alt=""
         role="presentation"
-        className=""
+        className={dimStyle}
       />
       <span
         className={

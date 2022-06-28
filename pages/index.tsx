@@ -136,7 +136,10 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       </Block>
 
       {/* markdown block */}
-      <Block bg="light" className="relative py-16 md:py-28 lg:py-36 -mb-[5%]">
+      <Block
+        bg="light"
+        className="-z-10 relative py-16 md:py-28 lg:py-36 -mb-[5%]"
+      >
         <div className="flex flex-col items-center md:items-stretch max-w-7xl mx-auto lg:pb-64 md:pb-32 sm:pb-36 pb-24">
           <Title
             as="h2"
@@ -187,8 +190,8 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       </Block>
 
       {/* Scores Block */}
-      <Block bg="dark" className="relative">
-        <ScoreContainer>
+      <Block bg="dark" className="relative h-fit py-16 md:py-28 lg:py-36">
+        <div className="z-10">
           <h2 className="text-ooze text-5xl sm:text-6xl md:text-7xl font-black leading-none text-center">
             top audit scores
           </h2>
@@ -198,14 +201,15 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <ScoreCircle dim={true} className="hidden lg:block" />
             <ScoreCircle dim={false} className="hidden lg:block" />
           </div>
-          <div className="max-w-md lg:max-w-xl xl:max-w-2xl mx-auto font-sans font-normal text-3xl leading-[42px] text-[#C7C7C7] [&>*]:pb-6">
+          <div className="max-w-xs sm:max-w-md lg:max-w-xl xl:max-w-2xl mx-auto font-sans font-normal text-2xl sm:text-3xl leading-[42px] text-[#C7C7C7] [&>*]:pb-6 [&>*]:mix-blend-color-dodge">
             <p>{`Search engines, business stakeholders, and end-users gauge a website’s value using metric tools like Google Lighthouse, which measures site performance, SEO, and accessibility.`}</p>
             <br />
             <p>{`Performance is one of the most difficult scores to get to 100. This is especially true in a time when users demand JavaScript-heavy, highly-interactive web experiences.`}</p>
             <br />
             <p>{`A Jamstack website, delivering SEO-friendly, lean & clean HTML in milliseconds, promises higher search-engine ranking and a more positive, responsive end-user experience.`}</p>
           </div>
-        </ScoreContainer>
+          <ScoreContainer />
+        </div>
       </Block>
     </Layout>
   );
