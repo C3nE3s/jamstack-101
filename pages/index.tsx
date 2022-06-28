@@ -4,6 +4,7 @@ import Image from "next/image";
 import path from "path";
 import Block from "../components/Block";
 import BrandGrid from "../components/BrandGrid";
+import Globe from "../components/Globe";
 import Layout from "../components/Layout";
 import MouseArrowDown from "../components/MouseArrowDown";
 import RectangleGraphic, {
@@ -133,6 +134,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         </Text>
 
         {/* SLOT FOR THREEJS GLOBE HERE! */}
+        <Globe />
       </Block>
 
       {/* markdown block */}
