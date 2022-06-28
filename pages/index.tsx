@@ -9,7 +9,6 @@ import MouseArrowDown from "../components/MouseArrowDown";
 import RectangleGraphic, {
   RECTANGLE_BG_IMAGE,
 } from "../components/RectangleGraphic";
-import RetroComputer from "../components/RetroComputer/RetroComputer";
 import ScoreCircle from "../components/ScoreCircle/ScoreCircle";
 import ScoreContainer from "../components/ScoreContainer/ScoreContainer";
 import Text from "../components/Text";
@@ -137,7 +136,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       </Block>
 
       {/* markdown block */}
-      <Block bg="light" className="relative py-16 md:py-28 lg:py-36">
+      <Block bg="light" className="relative py-16 md:py-28 lg:py-36 -mb-[5%]">
         <div className="flex flex-col items-center md:items-stretch max-w-7xl mx-auto lg:pb-64 md:pb-32 sm:pb-36 pb-24">
           <Title
             as="h2"
@@ -188,27 +187,25 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       </Block>
 
       {/* Scores Block */}
-      <Block bg="dark" className="relative h-screen">
-        <div className="w-4/5 absolute -top-[86px] left-1/2 transform -translate-x-1/2">
-          <ScoreContainer>
-            <h2 className="text-ooze text-7xl font-black tracking-[-0.039em] leading-[92px] text-center pb-24">
-              top audit scores
-            </h2>
-            <div className="w-full flex flex-row justify-center items-center pb-32">
-              <ScoreCircle dim={false} />
-              <ScoreCircle dim={false} />
-              <ScoreCircle dim={true} />
-              <ScoreCircle dim={false} />
-            </div>
-            <div className="lg:max-w-[756px] mx-auto font-sans font-normal text-3xl leading-[42px] text-[#C7C7C7] pb-48 [&>*]:pb-6 mix-blend-color-dodge">
-              <p>{`Search engines, business stakeholders, and end-users gauge a website’s value using metric tools like Google Lighthouse, which measures site performance, SEO, and accessibility.`}</p>
-              <br />
-              <p>{`Performance is one of the most difficult scores to get to 100. This is especially true in a time when users demand JavaScript-heavy, highly-interactive web experiences.`}</p>
-              <br />
-              <p>{`A Jamstack website, delivering SEO-friendly, lean & clean HTML in milliseconds, promises higher search-engine ranking and a more positive, responsive end-user experience.`}</p>
-            </div>
-          </ScoreContainer>
-        </div>
+      <Block bg="dark" className="relative">
+        <ScoreContainer>
+          <h2 className="text-ooze text-5xl sm:text-6xl md:text-7xl font-black leading-none text-center">
+            top audit scores
+          </h2>
+          <div className="w-full flex flex-row flex-grow-0 justify-between items-center lg:py-20 lg:px-8 xl:px-16">
+            <ScoreCircle dim={false} />
+            <ScoreCircle dim={false} className="hidden lg:block" />
+            <ScoreCircle dim={true} className="hidden lg:block" />
+            <ScoreCircle dim={false} className="hidden lg:block" />
+          </div>
+          <div className="max-w-md lg:max-w-xl xl:max-w-2xl mx-auto font-sans font-normal text-3xl leading-[42px] text-[#C7C7C7] [&>*]:pb-6">
+            <p>{`Search engines, business stakeholders, and end-users gauge a website’s value using metric tools like Google Lighthouse, which measures site performance, SEO, and accessibility.`}</p>
+            <br />
+            <p>{`Performance is one of the most difficult scores to get to 100. This is especially true in a time when users demand JavaScript-heavy, highly-interactive web experiences.`}</p>
+            <br />
+            <p>{`A Jamstack website, delivering SEO-friendly, lean & clean HTML in milliseconds, promises higher search-engine ranking and a more positive, responsive end-user experience.`}</p>
+          </div>
+        </ScoreContainer>
       </Block>
     </Layout>
   );

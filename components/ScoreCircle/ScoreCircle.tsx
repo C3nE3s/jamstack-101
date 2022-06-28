@@ -3,14 +3,17 @@ import styles from "./ScoreCircle.module.scss";
 
 interface ScoreCircleProps {
   dim: boolean;
+  className?: string;
 }
 
-const ScoreCircle: React.FC<ScoreCircleProps> = ({ dim }) => {
+const ScoreCircle: React.FC<ScoreCircleProps> = ({ dim, className }) => {
+  const combinedStyles = `${className ?? ""} relative w-full`;
+
   return (
-    <div className="relative">
+    <div className={combinedStyles}>
       <Image
         src="/images/score_circle.svg"
-        layout="intrinsic"
+        layout="responsive"
         width={339}
         height={338}
         alt=""
@@ -19,7 +22,7 @@ const ScoreCircle: React.FC<ScoreCircleProps> = ({ dim }) => {
       />
       <span
         className={
-          `absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-sans font-bold text-[63px] leading-[76px] text-ooze tracking-[-0.039em] ` +
+          `absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-sans font-bold text-9xl lg:text-5xl xl:text-6xl leading-[76px] text-ooze tracking-[-0.039em] ` +
           styles.oozeshadow
         }
       >
