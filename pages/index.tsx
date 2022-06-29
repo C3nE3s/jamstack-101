@@ -4,6 +4,7 @@ import Image from "next/image";
 import path from "path";
 import Block from "../components/Block";
 import BrandGrid from "../components/BrandGrid";
+import Globe from "../components/Globe";
 import Layout from "../components/Layout";
 import MouseArrowDown from "../components/MouseArrowDown";
 import RectangleGraphic, {
@@ -110,13 +111,13 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         </div>
       </Block>
       {/* Falling Logos */}
-      <div className="max-w-5xl mx-auto p-0 m-0">
+      <div className="max-w-5xl mx-auto">
         <BrandGrid />
       </div>
       {/* API Block*/}
       <Block
         bg="dark"
-        className="relative text-center flex flex-col items-center"
+        className="relative text-center flex flex-col items-center lg:max-w-4xl md:max-w-3xl sm:max-w-xl  mx-auto -mb-[50%] lg:-mb-[33%]"
       >
         <Title as="h2" className="pb-16">
           api
@@ -125,14 +126,15 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           as="p"
           color="white"
           emphasized={true}
-          className="lg:max-w-[575px] pb-10"
+          className="lg:max-w-2xl md:max-w-xl max-w-sm mx-auto pb-10"
         >
           At build time, a Jamstack website uses data from one or more APIs to
           generate markup. These APIs can be a headless CMS like Prismic, a
           database like Supabase, or even a local JSON file!
         </Text>
 
-        {/* SLOT FOR THREEJS GLOBE HERE! */}
+        {/*  THREEJS GLOBE */}
+        <Globe />
       </Block>
 
       {/* markdown block */}
@@ -140,7 +142,18 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         bg="light"
         className="-z-10 relative py-16 md:py-28 lg:py-36 -mb-[5%]"
       >
-        <div className="flex flex-col items-center md:items-stretch max-w-7xl mx-auto lg:pb-64 md:pb-32 sm:pb-36 pb-24">
+        {/* Wave SVG Transition */}
+        <span className="absolute w-screen top-0 left-0">
+          <Image
+            src="/images/wave.svg"
+            layout="responsive"
+            width={1512}
+            height={214}
+            alt=""
+            role="presentation"
+          />
+        </span>
+        <div className="flex flex-col items-center md:items-stretch max-w-7xl mx-auto lg:pb-64 md:pb-32 sm:pb-36 pb-24 pt-[50%] lg:pt-[33%]">
           <Title
             as="h2"
             className="hidden md:block pb-6 lg:pb-11 text-gray-darkest"
