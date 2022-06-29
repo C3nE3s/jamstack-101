@@ -55,7 +55,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               </Text>
               <MouseArrowDown />
             </div>
-            <div className="hidden md:block basis-1/2">
+            <div className="hidden md:block basis-1/2 animate-in fade-in zoom-in">
               <RectangleGraphic bgImage={RECTANGLE_BG_IMAGE.PEACH_GRADIENT} />
             </div>
           </div>
@@ -117,7 +117,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       {/* API Block*/}
       <Block
         bg="dark"
-        className="relative text-center flex flex-col items-center lg:max-w-4xl md:max-w-3xl sm:max-w-xl  mx-auto -mb-[50%] lg:-mb-[33%]"
+        className="relative text-center flex flex-col items-center lg:max-w-4xl md:max-w-3xl sm:max-w-xl  mx-auto -mb-[50%] lg:-mb-[33%] xl:-mb-[25%]"
       >
         <Title as="h2" className="pb-16">
           api
@@ -153,7 +153,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             role="presentation"
           />
         </span>
-        <div className="flex flex-col items-center md:items-stretch max-w-7xl mx-auto lg:pb-64 md:pb-32 sm:pb-36 pb-24 pt-[50%] lg:pt-[33%]">
+        <div className="flex flex-col items-center md:items-stretch max-w-7xl mx-auto lg:pb-64 md:pb-32 sm:pb-36 pb-24 pt-[50%] lg:pt-[33%] xl:pt-[25%]">
           <Title
             as="h2"
             className="hidden md:block pb-6 lg:pb-11 text-gray-darkest"

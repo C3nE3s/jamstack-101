@@ -30,42 +30,42 @@ const BrandGrid: React.FC = () => {
       <BrandIcon
         brand="NEXTJS"
         brightness="light"
-        className="row-start-1 row-end-1 col-start-4 col-end-4"
+        className="row-start-1 row-end-1 col-start-4 col-end-4 "
       />
       <BrandIcon
         brand="REACT"
         brightness="light"
-        className="row-start-2 row-end-2 col-start-1 col-end-1"
+        className="row-start-2 row-end-2 col-start-1 col-end-1 "
       />
       <BrandIcon
         brand="NEXTJS"
         brightness="light"
-        className="row-start-4 row-end-4 col-start-2 col-end-2"
+        className="row-start-4 row-end-4 col-start-2 col-end-2 "
       />
       <BrandIcon
         brand="REACT"
         brightness="light"
-        className="row-start-5 row-end-5 col-start-4 col-end-4"
+        className="row-start-5 row-end-5 col-start-4 col-end-4 "
       />
       <BrandIcon
         brand="SVELTE"
         brightness="dim"
-        className="row-start-6 row-end-6 col-start-1 col-end-1"
+        className="row-start-6 row-end-6 col-start-1 col-end-1 "
       />
       <BrandIcon
         brand="VUE"
         brightness="dim"
-        className="row-start-6 row-end-6 col-start-3 col-end-3 pt-32"
+        className="row-start-6 row-end-6 col-start-3 col-end-3 pt-32 "
       />
       <BrandIcon
         brand="REACT"
         brightness="dark"
-        className="row-start-[8] row-end-[9] col-start-2 col-end-2"
+        className="row-start-[8] row-end-[9] col-start-2 col-end-2 "
       />
       <BrandIcon
         brand="SVELTE"
         brightness="dark"
-        className="row-start-[9] row-end-[9] col-start-4 col-end-4"
+        className="row-start-[9] row-end-[9] col-start-4 col-end-4 "
       />
     </div>
   );

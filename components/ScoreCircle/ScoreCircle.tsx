@@ -18,11 +18,11 @@ const ScoreCircle: React.FC<ScoreCircleProps> = ({ dim, className }) => {
         height={338}
         alt=""
         role="presentation"
-        className={dimStyle}
+        className={dimStyle + " animate-in spin-in-180 paused hover:running"}
       />
       <span
         className={
-          `absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-sans font-bold text-9xl lg:text-5xl xl:text-6xl leading-[76px] text-ooze tracking-[-0.039em] ` +
+          `absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-sans font-bold text-9xl lg:text-5xl xl:text-6xl leading-[76px] text-ooze tracking-[-0.039em]` +
           styles.oozeshadow
         }
       >
