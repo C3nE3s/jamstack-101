@@ -2,7 +2,7 @@ interface MouseArrowDownProps {}
 
 const MouseArrowDown: React.FC = () => {
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="max-h-[40vh] md:max-h-full w-full flex flex-col items-center">
       {/* Mouse */}
       <svg
         width="36"

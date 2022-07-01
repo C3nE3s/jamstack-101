@@ -35,7 +35,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     <Layout>
       {/* HERO BLOCK */}
       <Block bg="light" className="py-16 md:py-28 lg:py-36">
-        <div className="max-w-7xl mx-auto">
+        <div className="px-6 md:px-0 max-w-7xl mx-auto">
           <Title as="h1" className="text-gray-darkest lg:pb-5 pb-8">
             jamstack&nbsp;
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 via-[#F58E7D] to-[#CD789F]">
@@ -47,7 +47,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               <Text
                 as="p"
                 color="gray"
-                className="lg:pl-16 md:pl-8 lg:max-w-xl max-w-sm"
+                className="pb-8 md:pb-0 lg:pl-16 md:pl-8 lg:max-w-xl max-w-sm"
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu
                 augue massa, tincidunt proin nunc viverra tristique tempor,
@@ -143,7 +143,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         className="-z-10 relative py-16 md:py-28 lg:py-36 -mb-[5%]"
       >
         {/* Wave SVG Transition */}
-        <span className="absolute w-screen top-0 left-0">
+        <span className="absolute w-screen -top-1 left-0">
           <Image
             src="/images/wave.svg"
             layout="responsive"
@@ -204,17 +204,17 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
       {/* Scores Block */}
       <Block bg="dark" className="relative h-fit py-16 md:py-28 lg:py-36">
-        <div className="z-10">
+        <div className="z-10 max-w-xs mx-auto sm:max-w-md md:max-w-full">
           <h2 className="text-ooze text-5xl sm:text-6xl md:text-7xl font-black leading-none text-center">
             top audit scores
           </h2>
-          <div className="w-full flex flex-row flex-grow-0 justify-between items-center lg:py-20 lg:px-8 xl:px-16">
+          <div className="w-full flex flex-row flex-grow-0 justify-between items-center lg:py-20 lg:max-w-screen-md xl:max-w-screen-lg xl:px-8 lg:mx-auto">
             <ScoreCircle dim={false} />
             <ScoreCircle dim={false} className="hidden lg:block" />
             <ScoreCircle dim={true} className="hidden lg:block" />
             <ScoreCircle dim={false} className="hidden lg:block" />
           </div>
-          <div className="max-w-xs sm:max-w-md lg:max-w-xl xl:max-w-2xl mx-auto font-sans font-normal text-2xl sm:text-3xl leading-[42px] text-[#C7C7C7] [&>*]:pb-6 [&>*]:mix-blend-color-dodge">
+          <div className="px-6 sm:px-0 max-w-xs sm:max-w-md lg:max-w-xl xl:max-w-2xl mx-auto font-sans font-normal text-lg sm:text-3xl md:leading-[42px] text-[#C7C7C7] [&>*]:pb-6 [&>*]:mix-blend-color-dodge">
             <p>{`Search engines, business stakeholders, and end-users gauge a website’s value using metric tools like Google Lighthouse, which measures site performance, SEO, and accessibility.`}</p>
             <br />
             <p>{`Performance is one of the most difficult scores to get to 100. This is especially true in a time when users demand JavaScript-heavy, highly-interactive web experiences.`}</p>
